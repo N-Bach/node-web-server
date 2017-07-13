@@ -39,7 +39,6 @@ app.set('view engine', hbs);
 app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home Page',
-    currentYear: new Date().getFullYear(),
     welcomeMessage: 'Welcome to my website'
   });
 });
@@ -47,13 +46,18 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
-    currentYear: new Date().getFullYear()
   });
 });
 
 app.get('/bad', (req, res) => {
   res.send({
     errorMessage: 'You in'
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page'
   });
 });
 
